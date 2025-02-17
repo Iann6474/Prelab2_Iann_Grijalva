@@ -1,0 +1,38 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\Debug\Lab2_Iann_Grijalva.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Lab2_Iann_Grijalva.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Lab2_Iann_Grijalva.map</FILE>
+  <FILE>Lab2_Iann_Grijalva.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <setup><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>30</LINE></setup>
+  <mostrarNumero><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>138</LINE></mostrarNumero>
+  <main_loop><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>91</LINE></main_loop>
+  <check_b2><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>103</LINE></check_b2>
+  <incremento><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>119</LINE></incremento>
+  <update_states><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>112</LINE></update_states>
+  <decremento><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>128</LINE></decremento>
+  <delay_ms><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>146</LINE></delay_ms>
+  <no_reset_inc><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>124</LINE></no_reset_inc>
+  <no_reset_dec><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>133</LINE></no_reset_dec>
+  <delay_loop1><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>148</LINE></delay_loop1>
+  <delay_loop2><FILE>C:\Users\ianng\Desktop\micros\micros\Lab2_Iann_Grijalva\Lab2_Iann_Grijalva\main.asm</FILE><LINE>150</LINE></delay_loop2>
+ </LABELS>
+</ASSEMBLER_INFO>
