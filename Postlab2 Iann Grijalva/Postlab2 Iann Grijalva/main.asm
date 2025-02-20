@@ -76,12 +76,12 @@ MAIN_LOOP:
     RCALL  T100ms          ; esperar 100ms antes de actualizar
     INC    R23             ; incrementar contador de 100ms
     CPI    R23, 10         ; verificar si pasaron 1000ms (10 * 100ms)
-    BRNE   SKIP_INCREMENT  ; si no es 1 segundo, saltar incremento
+    BRNE   sinc  ; si no es 1 segundo, saltar incremento
     CLR    R23             ; reiniciar contador de 100ms
     INC    R17             ; incrementar el contador del display
     ANDI   R17, 0x0F       ; mantener solo 4 bits
 
-SKIP_INCREMENT:
+sinc:
     IN     R16, PORTC      ; leer estado actual de PORTC
     ANDI   R16, 0x10    
     MOV    R22, R17        ; copiar contador a R22

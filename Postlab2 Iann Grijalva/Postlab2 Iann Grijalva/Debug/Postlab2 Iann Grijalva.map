@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm Thu Feb 20 15:52:20 2025
+AVRASM ver. 2.2.8  C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm Thu Feb 20 15:53:27 2025
 
 
 EQU  SIGNATURE_000 0000001e
@@ -698,7 +698,7 @@ EQU  INT_VECTORS_SIZE 00000034
 CSEG START        00000001
 CSEG MAIN_LOOP    00000033
 CSEG T100ms       00000068
-CSEG SKIP_INCREMENT 0000003a
+CSEG sinc         0000003a
 CSEG ccon         0000005a
 CSEG revb         00000043
 CSEG cdec         0000004b
