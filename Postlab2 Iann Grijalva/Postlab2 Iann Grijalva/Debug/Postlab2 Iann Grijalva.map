@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm Thu Feb 20 09:37:15 2025
+AVRASM ver. 2.2.8  C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm Thu Feb 20 15:52:20 2025
 
 
 EQU  SIGNATURE_000 0000001e
@@ -696,17 +696,18 @@ EQU  TWIaddr      00000030
 EQU  SPMRaddr     00000032
 EQU  INT_VECTORS_SIZE 00000034
 CSEG START        00000001
-CSEG MAIN_LOOP    00000032
-CSEG T100ms       00000063
-CSEG ccon         00000055
-CSEG revb         0000003e
-CSEG cdec         00000046
-CSEG DELAY        00000070
-CSEG actualizar_display 0000004e
-CSEG WAIT_FOR_RELEASE 0000006b
-CSEG recheck      00000062
-CSEG alrm1        0000005b
-CSEG alrm0        0000005f
-CSEG TIMER        00000064
-CSEG SUB_DELAY1   00000071
-CSEG SUB_DELAY2   00000075
+CSEG MAIN_LOOP    00000033
+CSEG T100ms       00000068
+CSEG SKIP_INCREMENT 0000003a
+CSEG ccon         0000005a
+CSEG revb         00000043
+CSEG cdec         0000004b
+CSEG DELAY        00000075
+CSEG actualizar_display 00000053
+CSEG WAIT_FOR_RELEASE 00000070
+CSEG recheck      00000067
+CSEG alrm1        00000060
+CSEG alrm0        00000064
+CSEG TIMER        00000069
+CSEG SUB_DELAY1   00000076
+CSEG SUB_DELAY2   0000007a

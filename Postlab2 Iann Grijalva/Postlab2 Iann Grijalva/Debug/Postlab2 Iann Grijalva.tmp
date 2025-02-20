@@ -23,20 +23,21 @@
   <FILE>Postlab2 Iann Grijalva.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <START><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>18</LINE></START>
-  <MAIN_LOOP><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>97</LINE></MAIN_LOOP>
-  <T100ms><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>172</LINE></T100ms>
-  <ccon><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>148</LINE></ccon>
-  <revb><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>114</LINE></revb>
-  <cdec><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>126</LINE></cdec>
-  <DELAY><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>190</LINE></DELAY>
-  <actualizar_display><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>139</LINE></actualizar_display>
-  <WAIT_FOR_RELEASE><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>183</LINE></WAIT_FOR_RELEASE>
-  <recheck><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>168</LINE></recheck>
-  <alrm1><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>157</LINE></alrm1>
-  <alrm0><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>163</LINE></alrm0>
-  <TIMER><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>174</LINE></TIMER>
-  <SUB_DELAY1><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>192</LINE></SUB_DELAY1>
-  <SUB_DELAY2><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>197</LINE></SUB_DELAY2>
+  <START><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>17</LINE></START>
+  <MAIN_LOOP><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>75</LINE></MAIN_LOOP>
+  <T100ms><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>152</LINE></T100ms>
+  <SKIP_INCREMENT><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>84</LINE></SKIP_INCREMENT>
+  <ccon><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>129</LINE></ccon>
+  <revb><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>96</LINE></revb>
+  <cdec><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>108</LINE></cdec>
+  <DELAY><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>170</LINE></DELAY>
+  <actualizar_display><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>120</LINE></actualizar_display>
+  <WAIT_FOR_RELEASE><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>163</LINE></WAIT_FOR_RELEASE>
+  <recheck><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>149</LINE></recheck>
+  <alrm1><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>138</LINE></alrm1>
+  <alrm0><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>144</LINE></alrm0>
+  <TIMER><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>154</LINE></TIMER>
+  <SUB_DELAY1><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>172</LINE></SUB_DELAY1>
+  <SUB_DELAY2><FILE>C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm</FILE><LINE>177</LINE></SUB_DELAY2>
  </LABELS>
 </ASSEMBLER_INFO>

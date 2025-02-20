@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm Thu Feb 20 09:37:15 2025
+AVRASM ver. 2.2.8  C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm Thu Feb 20 15:52:20 2025
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m328Pdef.inc'
 C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijalva\main.asm(13): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\M328PDEF.inc'
@@ -1043,193 +1043,172 @@ C:\Users\ianng\Desktop\micros\micros\Postlab2 Iann Grijalva\Postlab2 Iann Grijal
                                  
                                  ; ***** END OF FILE ******************************************************
                                  .org 0x0000
-                                 
-000000 c000                      	RJMP START  
+000000 c000                          RJMP START  
                                  
                                  START:
-000001 ef0f                      	LDI	R16, 0xFF
-000002 b907                      	OUT	DDRC, R16		; configurar PORTC como salida 
+000001 ef0f                          LDI    R16, 0xFF
+000002 b907                          OUT    DDRC, R16        ; configurar PORTC como salida 
+000003 e005                          LDI    R16, 0x05
+000004 bd05                          OUT    TCCR0B, R16      ; configurar Timer0 con prescaler de 1024
+000005 ef0f                          LDI    R16, 0xFF
+000006 b90a                          OUT    DDRD, R16        ; configurar PORTD como salida 
+000007 e000                          LDI    R16, 0x00
+000008 b904                          OUT    DDRB, R16        ; configurar PORTB como entrada
+000009 ef0f                          LDI    R16, 0xFF
+00000a b905                          OUT    PORTB, R16       ; pull-up en PB3 y PB2
                                  
-000003 e005                      	LDI	R16, 0x05
-000004 bd05                      	OUT	TCCR0B, R16		; configurar Timer0 con prescaler de 1024
+                                     ; puntero Z para la tabla de valores del display
+00000b e0f1                          LDI    ZH, 0X01
+00000c e0e0                          LDI    ZL, 0X00
                                  
-000005 ef0f                      	LDI R16, 0xFF
-000006 b90a                          OUT DDRD, R16		; configurar PORTD como salida 
+                                     ; cargar la tabla de valores para los números 0-F en el display de 7 segmentos
+00000d e30f                          LDI    R16, 0b00111111  ;0
+00000e 9301                          ST     Z+, R16
+00000f e006                          LDI    R16, 0b00000110  ;1
+000010 9301                          ST     Z+, R16
+000011 e50b                          LDI    R16, 0b01011011  ;2
+000012 9301                          ST     Z+, R16
+000013 e40f                          LDI    R16, 0b01001111  ;3
+000014 9301                          ST     Z+, R16
+000015 e606                          LDI    R16, 0b01100110  ;4
+000016 9301                          ST     Z+, R16
+000017 e60d                          LDI    R16, 0b01101101  ;5
+000018 9301                          ST     Z+, R16
+000019 e70d                          LDI    R16, 0b01111101  ;6
+00001a 9301                          ST     Z+, R16
+00001b e007                          LDI    R16, 0b00000111  ;7
+00001c 9301                          ST     Z+, R16
+00001d e70f                          LDI    R16, 0b01111111  ;8
+00001e 9301                          ST     Z+, R16
+00001f e60f                          LDI    R16, 0b01101111  ;9
+000020 9301                          ST     Z+, R16
+000021 e707                          LDI    R16, 0b01110111  ;A
+000022 9301                          ST     Z+, R16
+000023 e70c                          LDI    R16, 0b01111100  ;B
+000024 9301                          ST     Z+, R16
+000025 e309                          LDI    R16, 0b00111001  ;C
+000026 9301                          ST     Z+, R16
+000027 e50e                          LDI    R16, 0b01011110  ;D
+000028 9301                          ST     Z+, R16
+000029 e709                          LDI    R16, 0b01111001  ;E
+00002a 9301                          ST     Z+, R16
+00002b e701                          LDI    R16, 0b01110001  ;F
+00002c 9301                          ST     Z+, R16
                                  
-000007 e000                          LDI R16, 0x00
-000008 b904                          OUT DDRB, R16		; configurar PORTB como entrada
-                                 
-000009 ef0f                          LDI R16, 0xFF
-00000a b905                          OUT PORTB, R16		;pull-up en PB3 y PB2
-                                 
-                                 	; puntero Z para la tabla de valores del display
-00000b e0f1                      	LDI ZH, 0X01
-00000c e0e0                          LDI ZL, 0X00
-                                 
-                                     ; cargar la tabla de valores para los números 0-F en el display de 7 
-00000d e30f                          LDI R16, 0b00111111  ;0
-00000e 9301                      	ST Z+, R16
-                                 
-00000f e006                      	LDI R16, 0b00000110  ;1
-000010 9301                      	ST Z+, R16
-                                 
-000011 e50b                      	LDI R16, 0b01011011  ;2
-000012 9301                      	ST Z+, R16
-                                 
-000013 e40f                      	LDI R16, 0b01001111  ;3
-000014 9301                      	ST Z+, R16
-                                 
-000015 e606                      	LDI R16, 0b01100110  ;4
-000016 9301                      	ST Z+, R16
-                                 
-000017 e60d                      	LDI R16, 0b01101101  ;5
-000018 9301                      	ST Z+, R16
-                                 
-000019 e70d                      	LDI R16, 0b01111101  ;6
-00001a 9301                      	ST Z+, R16
-                                 
-00001b e007                      	LDI R16, 0b00000111  ;7
-00001c 9301                      	ST Z+, R16
-                                 
-00001d e70f                      	LDI R16, 0b01111111  ;8
-00001e 9301                      	ST Z+, R16
-                                 
-00001f e60f                      	LDI R16, 0b01101111  ;9
-000020 9301                      	ST Z+, R16
-                                 
-000021 e707                      	LDI R16, 0b01110111  ;A
-000022 9301                      	ST Z+, R16
-                                 
-000023 e70c                      	LDI R16, 0b01111100  ;B
-000024 9301                      	ST Z+, R16
-                                 
-000025 e309                      	LDI R16, 0b00111001  ;C
-000026 9301                      	ST Z+, R16
-                                 
-000027 e50e                      	LDI R16, 0b01011110  ;D
-000028 9301                      	ST Z+, R16
-                                 
-000029 e709                      	LDI R16, 0b01111001  ;E
-00002a 9301                      	ST Z+, R16
-                                 
-00002b e701                      	LDI R16, 0b01110001  ;F
-00002c 9301                      	ST Z+, R16
-                                 
-                                 	; reinicia la tabla
-00002d e0f1                      	LDI ZH, 0X01
-00002e e0e0                          LDI ZL, 0X00
-                                 
-                                 
-00002f 8100                      	LD R16, Z
-000030 b90b                      	OUT PORTD, R16
-                                 
-000031 e040                      	LDI R20, 0x00  ;contador en 0
+                                     ; reiniciar la tabla
+00002d e0f1                          LDI    ZH, 0X01
+00002e e0e0                          LDI    ZL, 0X00
+00002f 8100                          LD     R16, Z
+000030 b90b                          OUT    PORTD, R16
+000031 e040                          LDI    R20, 0x00        ; contador en 0
+000032 2777                          CLR    R23              ; contador de 100ms
                                  
                                  MAIN_LOOP:
-000032 d030                          RCALL   T100ms  ; esperar 100 ms antes de actualizar
-000033 9513                          INC     R17     ; incrementar el contador de tiempo
-000034 701f                          ANDI    R17, 0x0F  
-                                     
-000035 b108                          IN      R16, PORTC   ; leer el estado actual de PORTC
-000036 7100                          ANDI    R16, 0x10    
-000037 2f61                          MOV     R22, R17     ; copiar el contador a R22
-000038 706f                          ANDI    R22, 0x0F    
-000039 2b06                          OR      R16, R22     ; combinar con el estado del LED
-00003a b908                          OUT     PORTC, R16   ; actualizar PORTC
-                                     
-00003b d019                          RCALL   ccon     ; verificar coincidencia de contadores
-00003c d001                          RCALL   revb     
-00003d cff4                          RJMP    MAIN_LOOP
+000033 d034                          RCALL  T100ms          ; esperar 100ms antes de actualizar
+000034 9573                          INC    R23             ; incrementar contador de 100ms
+000035 307a                          CPI    R23, 10         ; verificar si pasaron 1000ms (10 * 100ms)
+000036 f419                          BRNE   SKIP_INCREMENT  ; si no es 1 segundo, saltar incremento
+000037 2777                          CLR    R23             ; reiniciar contador de 100ms
+000038 9513                          INC    R17             ; incrementar el contador del display
+000039 701f                          ANDI   R17, 0x0F       ; mantener solo 4 bits
                                  
+                                 SKIP_INCREMENT:
+00003a b108                          IN     R16, PORTC      ; leer estado actual de PORTC
+00003b 7100                          ANDI   R16, 0x10    
+00003c 2f61                          MOV    R22, R17        ; copiar contador a R22
+00003d 706f                          ANDI   R22, 0x0F    
+00003e 2b06                          OR     R16, R22        ; combinar con estado del LED
+00003f b908                          OUT    PORTC, R16      ; actualizar PORTC
+                                 
+000040 d019                          RCALL  ccon            ; verificar coincidencia de contadores
+000041 d001                          RCALL  revb     
+000042 cff0                          RJMP   MAIN_LOOP
                                  
                                  revb:
-00003e 991a                          SBIC PINB, 2  ; si PB2 (incremento) está en bajo
-00003f c006                          RJMP cdec     ; si no, revisar decremento
-000040 d02f                          RCALL DELAY   
-                                     
-000041 9543                          INC R20        ; incrementar contador
-000042 704f                          ANDI R20, 0x0F 
-                                     
-000043 d00a                          RCALL actualizar_display  ; actualizar el display
-000044 d026                          RCALL WAIT_FOR_RELEASE   
-000045 9508                          RET
+000043 991a                          SBIC   PINB, 2         ; si PB2 (incremento) está en bajo
+000044 c006                          RJMP   cdec            ; si no, revisar decremento
+000045 d02f                          RCALL  DELAY   
+                                 
+000046 9543                          INC    R20             ; incrementar contador
+000047 704f                          ANDI   R20, 0x0F 
+                                 
+000048 d00a                          RCALL  actualizar_display  ; actualizar el display
+000049 d026                          RCALL  WAIT_FOR_RELEASE   
+00004a 9508                          RET
                                  
                                  cdec:
-000046 991b                          SBIC PINB, 3  ; si PB3 (decremento) está en bajo
-000047 9508                          RET         
-000048 d027                          RCALL DELAY  
-                                     
-000049 954a                          DEC R20        ; decrementar contador
-00004a 704f                          ANDI R20, 0x0F 
-                                     
-00004b d002                          RCALL actualizar_display  ; actualizar el display
-00004c d01e                          RCALL WAIT_FOR_RELEASE    
-00004d 9508                          RET
+00004b 991b                          SBIC   PINB, 3         ; si PB3 (decremento) está en bajo
+00004c 9508                          RET         
+00004d d027                          RCALL  DELAY  
                                  
+00004e 954a                          DEC    R20             ; decrementar contador
+00004f 704f                          ANDI   R20, 0x0F 
+                                 
+000050 d002                          RCALL  actualizar_display  ; actualizar el display
+000051 d01e                          RCALL  WAIT_FOR_RELEASE    
+000052 9508                          RET
                                  
                                  actualizar_display:
-00004e e0f1                          LDI ZH, 0x01  ; recargar parte alta de la tabla
-00004f e0e0                          LDI ZL, 0x00  ; recargar parte baja de la tabla
-000050 2f04                          MOV R16, R20  ; copiar contador
-000051 0fe0                          ADD ZL, R16   ; calcular dirección en la tabla
-000052 8100                          LD R16, Z     ; cargar valor 
-000053 b90b                          OUT PORTD, R16 ; mostrar en el display
-000054 9508                          RET
+000053 e0f1                          LDI    ZH, 0x01        ; recargar parte alta de la tabla
+000054 e0e0                          LDI    ZL, 0x00        ; recargar parte baja de la tabla
+000055 2f04                          MOV    R16, R20        ; copiar contador
+000056 0fe0                          ADD    ZL, R16         ; calcular dirección en la tabla
+000057 8100                          LD     R16, Z          ; cargar valor 
+000058 b90b                          OUT    PORTD, R16      ; mostrar en el display
+000059 9508                          RET
                                  
                                  ccon:
-000055 1714                          CP      R17, R20   ; comparar contadores
-000056 f459                          BRNE    recheck   
-                                     
-000057 2711                          CLR     R17        ; reiniciar contador de segundos
-000058 ff50                          SBRS    R21, 0     ; si el bit 0 de R21 es 1, encender LED
-000059 c001                          RJMP    alrm1      ; si está apagado encender
-00005a c004                          RJMP    alrm0      ; si está encendid apagar
+00005a 1714                          CP     R17, R20        ; comparar contadores
+00005b f459                          BRNE   recheck   
+                                 
+00005c 2711                          CLR    R17             ; reiniciar contador de segundos
+00005d ff50                          SBRS   R21, 0          ; si el bit 0 de R21 es 1, encender LED
+00005e c001                          RJMP   alrm1           ; si está apagado, encender
+00005f c004                          RJMP   alrm0           ; si está encendido, apagar
                                  
                                  alrm1:
-00005b 9a45                          SBI     PORTC, 5  ; encender LED en PC4
-00005c e001                          LDI     R16, 1
-00005d 2f50                          MOV     R21, R16 ; marcar LED como encendido
-00005e 9508                          RET
-                                     
+000060 9a45                          SBI    PORTC, 5        ; encender LED en PC5
+000061 e001                          LDI    R16, 1
+000062 2f50                          MOV    R21, R16        ; marcar LED como encendido
+000063 9508                          RET
+                                 
                                  alrm0:
-00005f 9845                          CBI     PORTC, 5  ; apagar LED en PC4
-000060 2755                          CLR     R21       ; marcar LED como apagado
-000061 9508                          RET
+000064 9845                          CBI    PORTC, 5        ; apagar LED en PC5
+000065 2755                          CLR    R21             ; marcar LED como apagado
+000066 9508                          RET
                                  
                                  recheck:
-000062 9508                          RET
-                                 
+000067 9508                          RET
                                  
                                  T100ms:
-000063 e02f                          LDI     R18, 15
+000068 e02d                          LDI    R18, 13         
                                  TIMER: 
-000064 9ba8                          SBIS    TIFR0, TOV0
-000065 cffe                          RJMP    TIMER
-000066 e001                          LDI     R16, (1 << TOV0)
-000067 bb05                          OUT     TIFR0, R16
-000068 952a                          DEC     R18
-000069 f7d1                          BRNE    TIMER
-00006a 9508                          RET
-                                 
-                                 WAIT_FOR_RELEASE:
-00006b 9b1a                          SBIS PINB, 2
-00006c cffe                          RJMP WAIT_FOR_RELEASE
-00006d 9b1b                          SBIS PINB, 3
-00006e cffc                          RJMP WAIT_FOR_RELEASE
+000069 9ba8                          SBIS   TIFR0, TOV0
+00006a cffe                          RJMP   TIMER
+00006b e001                          LDI    R16, (1 << TOV0)
+00006c bb05                          OUT    TIFR0, R16
+00006d 952a                          DEC    R18
+00006e f7d1                          BRNE   TIMER
 00006f 9508                          RET
                                  
+                                 WAIT_FOR_RELEASE:
+000070 9b1a                          SBIS   PINB, 2
+000071 cffe                          RJMP   WAIT_FOR_RELEASE
+000072 9b1b                          SBIS   PINB, 3
+000073 cffc                          RJMP   WAIT_FOR_RELEASE
+000074 9508                          RET
+                                 
                                  DELAY:
-000070 ef2f                          LDI     R18, 0xFF
+000075 ef2f                          LDI    R18, 0xFF
                                  SUB_DELAY1:
-000071 952a                          DEC     R18
-000072 3020                          CPI     R18, 0
-000073 f7e9                          BRNE    SUB_DELAY1
-000074 ef2f                          LDI     R18, 0xFF
+000076 952a                          DEC    R18
+000077 3020                          CPI    R18, 0
+000078 f7e9                          BRNE   SUB_DELAY1
+000079 ef2f                          LDI    R18, 0xFF
                                  SUB_DELAY2:
-000075 952a                          DEC     R18
-000076 3020                          CPI     R18, 0
-000077 f7e9                          BRNE    SUB_DELAY2
-000078 9508                          RET
+00007a 952a                          DEC    R18
+00007b 3020                          CPI    R18, 0
+00007c f7e9                          BRNE   SUB_DELAY2
 
 
 RESOURCE USE INFORMATION
@@ -1250,21 +1229,21 @@ counted separately from r26..r31 here.
 x  :   0 y  :   0 z  :  18 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
 r13:   0 r14:   0 r15:   0 r16:  56 r17:   5 r18:   8 r19:   0 r20:   7 
-r21:   3 r22:   3 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
+r21:   3 r22:   3 r23:   4 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   4 r31:   3 
-Registers used: 9 out of 35 (25.7%)
+Registers used: 10 out of 35 (28.6%)
 
 "ATmega328P" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   1 adiw  :   0 and   :   0 
 andi  :   5 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   4 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brne  :   5 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   1 cbr   :   0 
-clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   2 cls   :   0 
+clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   4 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   1 cpc   :   0 
-cpi   :   2 cpse  :   0 dec   :   4 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   2 jmp   :   0 
+cpi   :   3 cpse  :   0 dec   :   4 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   3 jmp   :   0 
 ld    :   2 ldd   :   0 ldi   :  33 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   3 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   0 or    :   1 ori   :   0 out   :   9 pop   :   0 
@@ -1279,7 +1258,7 @@ Instructions used: 23 out of 113 (20.4%)
 "ATmega328P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000f2    242      0    242   32768   0.7%
+[.cseg] 0x000000 0x0000fc    252      0    252   32768   0.8%
 [.dseg] 0x000100 0x000100      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 
